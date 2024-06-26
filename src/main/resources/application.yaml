@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    bootstrap-servers: "<default-ip>:9092"
+    producer:
+      keySerializer: "org.apache.kafka.common.serialization.StringSerializer"
+      valueSerializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
+      properties:
+        schema:
+          registry:
+            url: "http://<default-ip>:8081"
+
+server:
+  port: 9777
+
+kafka:
+  topics:
+    input: "dev.codeWithSrb.input.test"
+    output: "dev.codeWithSrb.output.test"
+    error: "dev.codeWithSrb.error.test"

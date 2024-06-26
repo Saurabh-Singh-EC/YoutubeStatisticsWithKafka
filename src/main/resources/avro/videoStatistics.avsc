@@ -1,0 +1,31 @@
+{
+  "namespace": "com.codeWirhSrb.Kafka.schema",
+  "type": "record",
+  "name": "VideoStatistics",
+  "fields": [
+    {
+      "name": "viewCount",
+      "type": "string",
+      "default": "None"
+    },
+    {
+      "name": "likeCount",
+      "type": "string",
+      "default": "None"
+    },
+    {
+      "name": "favoriteCount",
+      "type": "string",
+      "default": "None"
+    },
+    {
+      "name": "commentCount",
+      "type": "string",
+      "default": "None"
+    },
+    {
+      "name": "videoTitle",
+      "type": "string"
+    }
+  ]
+}
