@@ -1,6 +1,5 @@
 package com.codeWithSrb.Kafka.common;
 
-import com.codeWithSrb.Kafka.model.VideoStatistics;
 import org.apache.kafka.common.errors.ApiException;
 import org.springframework.util.ObjectUtils;
 

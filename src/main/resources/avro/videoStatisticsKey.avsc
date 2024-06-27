@@ -1,0 +1,12 @@
+{
+  "namespace": "com.codeWithSrb.Kafka.schema",
+  "type": "record",
+  "name": "VideoStatisticsKey",
+  "doc": "Video statistics key",
+  "fields": [
+    {
+      "name": "VideoStatisticsId",
+      "type": "string"
+    }
+  ]
+}

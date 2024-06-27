@@ -13,8 +13,8 @@ import java.time.Duration;
 
 public class PlayListStatisticStrategy implements YoutubeStatisticStrategy {
     private static final String PART1_URL= "https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&part=snippet&";
-    private static final String PART2_URL= "playlistId=<PLAYLIST_ID>&key=";
-    private static final String PART3_URL= "API_KEY";
+    private static final String PART2_URL= "playlistId=<PLAYLIST_ID>";
+    private static final String PART3_URL= "<API_KEY>";
 
 
     public String getStatistics(String nextPageToken){

@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.codeWirhSrb.Kafka.schema;
+package com.codeWithSrb.Kafka.schema;
 
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.message.BinaryMessageEncoder;
@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -4982923831448639544L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VideoStatistics\",\"namespace\":\"com.codeWirhSrb.Kafka.schema\",\"fields\":[{\"name\":\"viewCount\",\"type\":\"string\",\"default\":\"None\"},{\"name\":\"likeCount\",\"type\":\"string\",\"default\":\"None\"},{\"name\":\"favoriteCount\",\"type\":\"string\",\"default\":\"None\"},{\"name\":\"commentCount\",\"type\":\"string\",\"default\":\"None\"},{\"name\":\"videoTitle\",\"type\":\"string\"}]}");
+  private static final long serialVersionUID = 7798575930622725835L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VideoStatistics\",\"namespace\":\"com.codeWithSrb.Kafka.schema\",\"fields\":[{\"name\":\"viewCount\",\"type\":\"string\",\"default\":\"None\"},{\"name\":\"likeCount\",\"type\":\"string\",\"default\":\"None\"},{\"name\":\"favoriteCount\",\"type\":\"string\",\"default\":\"None\"},{\"name\":\"commentCount\",\"type\":\"string\",\"default\":\"None\"},{\"name\":\"videoTitle\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -190,8 +190,8 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
    * Creates a new VideoStatistics RecordBuilder.
    * @return A new VideoStatistics RecordBuilder
    */
-  public static com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder newBuilder() {
-    return new com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder();
+  public static com.codeWithSrb.Kafka.schema.VideoStatistics.Builder newBuilder() {
+    return new com.codeWithSrb.Kafka.schema.VideoStatistics.Builder();
   }
 
   /**
@@ -199,8 +199,8 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
    * @param other The existing builder to copy.
    * @return A new VideoStatistics RecordBuilder
    */
-  public static com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder newBuilder(com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder other) {
-    return new com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder(other);
+  public static com.codeWithSrb.Kafka.schema.VideoStatistics.Builder newBuilder(com.codeWithSrb.Kafka.schema.VideoStatistics.Builder other) {
+    return new com.codeWithSrb.Kafka.schema.VideoStatistics.Builder(other);
   }
 
   /**
@@ -208,8 +208,8 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
    * @param other The existing instance to copy.
    * @return A new VideoStatistics RecordBuilder
    */
-  public static com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder newBuilder(com.codeWirhSrb.Kafka.schema.VideoStatistics other) {
-    return new com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder(other);
+  public static com.codeWithSrb.Kafka.schema.VideoStatistics.Builder newBuilder(com.codeWithSrb.Kafka.schema.VideoStatistics other) {
+    return new com.codeWithSrb.Kafka.schema.VideoStatistics.Builder(other);
   }
 
   /**
@@ -233,7 +233,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder other) {
+    private Builder(com.codeWithSrb.Kafka.schema.VideoStatistics.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.viewCount)) {
         this.viewCount = data().deepCopy(fields()[0].schema(), other.viewCount);
@@ -261,7 +261,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
      * Creates a Builder by copying an existing VideoStatistics instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.codeWirhSrb.Kafka.schema.VideoStatistics other) {
+    private Builder(com.codeWithSrb.Kafka.schema.VideoStatistics other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.viewCount)) {
         this.viewCount = data().deepCopy(fields()[0].schema(), other.viewCount);
@@ -298,7 +298,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'viewCount'.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder setViewCount(java.lang.CharSequence value) {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder setViewCount(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.viewCount = value;
       fieldSetFlags()[0] = true;
@@ -318,7 +318,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'viewCount' field.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder clearViewCount() {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder clearViewCount() {
       viewCount = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -337,7 +337,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'likeCount'.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder setLikeCount(java.lang.CharSequence value) {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder setLikeCount(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.likeCount = value;
       fieldSetFlags()[1] = true;
@@ -357,7 +357,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'likeCount' field.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder clearLikeCount() {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder clearLikeCount() {
       likeCount = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -376,7 +376,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'favoriteCount'.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder setFavoriteCount(java.lang.CharSequence value) {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder setFavoriteCount(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.favoriteCount = value;
       fieldSetFlags()[2] = true;
@@ -396,7 +396,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'favoriteCount' field.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder clearFavoriteCount() {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder clearFavoriteCount() {
       favoriteCount = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -415,7 +415,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'commentCount'.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder setCommentCount(java.lang.CharSequence value) {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder setCommentCount(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.commentCount = value;
       fieldSetFlags()[3] = true;
@@ -435,7 +435,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'commentCount' field.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder clearCommentCount() {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder clearCommentCount() {
       commentCount = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -454,7 +454,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'videoTitle'.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder setVideoTitle(java.lang.CharSequence value) {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder setVideoTitle(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.videoTitle = value;
       fieldSetFlags()[4] = true;
@@ -474,7 +474,7 @@ public class VideoStatistics extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'videoTitle' field.
       * @return This builder.
       */
-    public com.codeWirhSrb.Kafka.schema.VideoStatistics.Builder clearVideoTitle() {
+    public com.codeWithSrb.Kafka.schema.VideoStatistics.Builder clearVideoTitle() {
       videoTitle = null;
       fieldSetFlags()[4] = false;
       return this;

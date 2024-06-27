@@ -4,6 +4,7 @@ package com.codeWithSrb.Kafka.controller;
 import com.codeWithSrb.Kafka.enumeration.StatisticType;
 import com.codeWithSrb.Kafka.model.PlaylistStatistics;
 import com.codeWithSrb.Kafka.model.VideoStatistics;
+import com.codeWithSrb.Kafka.schema.VideoStatisticsKey;
 import com.codeWithSrb.Kafka.service.SendToKafkaService;
 import com.codeWithSrb.Kafka.service.YoutubeService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,7 +38,7 @@ public class Controller {
         });
 
         videoStatistics.forEach(videoStatistic -> {
-            com.codeWirhSrb.Kafka.schema.VideoStatistics value = com.codeWirhSrb.Kafka.schema.VideoStatistics.newBuilder()
+            com.codeWithSrb.Kafka.schema.VideoStatistics value = com.codeWithSrb.Kafka.schema.VideoStatistics.newBuilder()
                     .setLikeCount(videoStatistic.getLikeCount())
                     .setCommentCount(videoStatistic.getCommentCount())
                     .setViewCount(videoStatistic.getViewCount())
@@ -45,7 +46,11 @@ public class Controller {
                     .setVideoTitle(videoStatistic.getVideoTitle())
                     .build();
 
-            String key = videoStatistic.getVideoTitle() + videoStatistic.getLikeCount() + videoStatistic.getCommentCount() + videoStatistic.getFavoriteCount();
+            String rawKey = videoStatistic.getVideoTitle() + videoStatistic.getLikeCount() + videoStatistic.getCommentCount() + videoStatistic.getFavoriteCount();
+
+            VideoStatisticsKey key = VideoStatisticsKey.newBuilder()
+                    .setVideoStatisticsId(rawKey)
+                    .build();
             sendToKafkaService.sendToKafka(key, value);
         });
     }

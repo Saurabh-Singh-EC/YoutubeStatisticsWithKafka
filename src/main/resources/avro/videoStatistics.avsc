@@ -1,5 +1,5 @@
 {
-  "namespace": "com.codeWirhSrb.Kafka.schema",
+  "namespace": "com.codeWithSrb.Kafka.schema",
   "type": "record",
   "name": "VideoStatistics",
   "fields": [

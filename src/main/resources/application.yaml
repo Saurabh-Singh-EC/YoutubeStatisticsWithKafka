@@ -1,19 +1,28 @@
 spring:
   kafka:
-    bootstrap-servers: "<default-ip>:9092"
+    bootstrap-servers: <DEFAULT_IP>:9092
     producer:
-      keySerializer: "org.apache.kafka.common.serialization.StringSerializer"
-      valueSerializer: "io.confluent.kafka.serializers.KafkaAvroSerializer"
+      keySerializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      valueSerializer: io.confluent.kafka.serializers.KafkaAvroSerializer
       properties:
         schema:
           registry:
-            url: "http://<default-ip>:8081"
+            url: http://<DEFAULT_IP>:8081
+    streams:
+      application-id: dev.codeWithSrb.v1
+      properties:
+        default:
+          deserialization.exception.handler: org.apache.kafka.streams.errors.LogAndContinueExceptionHandler
+          key.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+          value.serde: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
+        processing-guarantee: at_least_once
+        schema.registry-url: http://<DEFAULT_IP>:8081
 
 server:
   port: 9777
 
 kafka:
   topics:
-    input: "dev.codeWithSrb.input.test"
-    output: "dev.codeWithSrb.output.test"
-    error: "dev.codeWithSrb.error.test"
+    input: dev.codeWithSrb.input.test
+    output: dev.codeWithSrb.output.test
+    error: dev.codeWithSrb.error.test

@@ -15,15 +15,15 @@ public class SendToKafkaService {
 
     private final Topics topics;
 
-    private final KafkaTemplate<String, SpecificRecord> kafkaTemplate;
+    private final KafkaTemplate<SpecificRecord, SpecificRecord> kafkaTemplate;
 
-    public SendToKafkaService(Topics topics, KafkaTemplate<String, SpecificRecord> kafkaTemplate) {
+    public SendToKafkaService(Topics topics, KafkaTemplate<SpecificRecord, SpecificRecord> kafkaTemplate) {
         this.topics = topics;
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendToKafka(String key, SpecificRecord specificRecord) {
-        CompletableFuture<SendResult<String, SpecificRecord>> futureResult = kafkaTemplate.send(topics.getInput(), key, specificRecord);
+    public void sendToKafka(SpecificRecord key, SpecificRecord specificRecord) {
+        CompletableFuture<SendResult<SpecificRecord, SpecificRecord>> futureResult = kafkaTemplate.send(topics.getInput(), key, specificRecord);
         futureResult.whenComplete((result, exception) -> {
             if (ObjectUtils.isEmpty(exception)) {
                 System.out.println("message sent on offset: " + result.getRecordMetadata().offset());
