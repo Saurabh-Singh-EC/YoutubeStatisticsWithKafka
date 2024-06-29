@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class YoutubeStream {
+public class KafkaYoutubeStream {
 
     @Bean
     public KStream<SpecificRecord, VideoStatistics> createStream(

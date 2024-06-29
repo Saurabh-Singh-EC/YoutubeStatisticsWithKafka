@@ -5,7 +5,7 @@ import com.codeWithSrb.Kafka.enumeration.StatisticType;
 import com.codeWithSrb.Kafka.model.PlaylistStatistics;
 import com.codeWithSrb.Kafka.model.VideoStatistics;
 import com.codeWithSrb.Kafka.schema.VideoStatisticsKey;
-import com.codeWithSrb.Kafka.service.SendToKafkaService;
+import com.codeWithSrb.Kafka.service.KafkaProducerService;
 import com.codeWithSrb.Kafka.service.YoutubeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,11 +19,11 @@ import java.util.List;
 public class Controller {
 
     private final YoutubeService youtubeService;
-    private final SendToKafkaService sendToKafkaService;
+    private final KafkaProducerService kafkaProducerService;
 
-    public Controller(YoutubeService youtubeService, SendToKafkaService sendToKafkaService) {
+    public Controller(YoutubeService youtubeService, KafkaProducerService kafkaProducerService) {
         this.youtubeService = youtubeService;
-        this.sendToKafkaService = sendToKafkaService;
+        this.kafkaProducerService = kafkaProducerService;
     }
 
     @GetMapping("/youtube")
@@ -51,7 +51,7 @@ public class Controller {
             VideoStatisticsKey key = VideoStatisticsKey.newBuilder()
                     .setVideoStatisticsId(rawKey)
                     .build();
-            sendToKafkaService.sendToKafka(key, value);
+            kafkaProducerService.sendToKafka(key, value);
         });
     }
 }

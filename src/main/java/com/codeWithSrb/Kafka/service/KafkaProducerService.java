@@ -2,7 +2,6 @@ package com.codeWithSrb.Kafka.service;
 
 import com.codeWithSrb.Kafka.configuration.Topics;
 import org.apache.avro.specific.SpecificRecord;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
@@ -11,13 +10,13 @@ import org.springframework.util.ObjectUtils;
 import java.util.concurrent.CompletableFuture;
 
 @Service
-public class SendToKafkaService {
+public class KafkaProducerService {
 
     private final Topics topics;
 
     private final KafkaTemplate<SpecificRecord, SpecificRecord> kafkaTemplate;
 
-    public SendToKafkaService(Topics topics, KafkaTemplate<SpecificRecord, SpecificRecord> kafkaTemplate) {
+    public KafkaProducerService(Topics topics, KafkaTemplate<SpecificRecord, SpecificRecord> kafkaTemplate) {
         this.topics = topics;
         this.kafkaTemplate = kafkaTemplate;
     }
