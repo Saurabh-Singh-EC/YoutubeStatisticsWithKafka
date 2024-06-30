@@ -37,6 +37,11 @@ public class Controller {
             videoStatistics.addAll(statistics);
         });
 
+        sendToKafka(videoStatistics);
+    }
+
+    private void sendToKafka(List<VideoStatistics> videoStatistics) {
+
         videoStatistics.forEach(videoStatistic -> {
             com.codeWithSrb.Kafka.schema.VideoStatistics value = com.codeWithSrb.Kafka.schema.VideoStatistics.newBuilder()
                     .setLikeCount(videoStatistic.getLikeCount())
@@ -54,4 +59,5 @@ public class Controller {
             kafkaProducerService.sendToKafka(key, value);
         });
     }
+
 }
