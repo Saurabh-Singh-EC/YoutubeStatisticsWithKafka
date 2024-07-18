@@ -1,5 +1,7 @@
 package com.codeWithSrb.Kafka.model;
 
+import java.util.Objects;
+
 public class VideoStatistics {
 
     private String viewCount;
@@ -57,5 +59,17 @@ public class VideoStatistics {
 
     public void setVideoTitle(String videoTitle) {
         this.videoTitle = videoTitle;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof VideoStatistics that)) return false;
+        return Objects.equals(viewCount, that.viewCount) && Objects.equals(likeCount, that.likeCount) && Objects.equals(favoriteCount, that.favoriteCount) && Objects.equals(commentCount, that.commentCount) && Objects.equals(videoTitle, that.videoTitle);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(viewCount, likeCount, favoriteCount, commentCount, videoTitle);
     }
 }

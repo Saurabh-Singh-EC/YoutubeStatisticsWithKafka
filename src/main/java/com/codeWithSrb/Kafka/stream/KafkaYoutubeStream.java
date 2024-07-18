@@ -1,9 +1,9 @@
 package com.codeWithSrb.Kafka.stream;
 
-import com.codeWithSrb.Kafka.schema.VideoStatistics;
 import com.codeWithSrb.Kafka.configuration.Serdes;
 import com.codeWithSrb.Kafka.configuration.Topics;
-import org.apache.avro.specific.SpecificRecord;
+import com.codeWithSrb.Kafka.schema.VideoStatistics;
+import com.codeWithSrb.Kafka.schema.VideoStatisticsKey;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.kstream.*;
 import org.springframework.context.annotation.Bean;
@@ -13,12 +13,12 @@ import org.springframework.context.annotation.Configuration;
 public class KafkaYoutubeStream {
 
     @Bean
-    public KStream<SpecificRecord, VideoStatistics> createStream(
+    public KStream<VideoStatisticsKey, VideoStatistics> createStream(
             StreamsBuilder streamsBuilder,
             Topics topics,
             Serdes serdes) {
 
-        KStream<SpecificRecord, VideoStatistics> stream = streamsBuilder.stream(topics.getInput(), Consumed.with(serdes.getKeySerde(), serdes.getValueSerde()));
+        KStream<VideoStatisticsKey, VideoStatistics> stream = streamsBuilder.stream(topics.getInput(), Consumed.with(serdes.getKeySerde(), serdes.getValueSerde()));
         var branch = stream.peek((key, value) -> System.out.println("Start Processing of record: " + value.getVideoTitle()))
                 .split(Named.as("branch-"))
                 .branch((key, value) -> true, Branched.as("success"))

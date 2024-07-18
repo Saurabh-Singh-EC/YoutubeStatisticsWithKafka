@@ -2,9 +2,9 @@ package com.codeWithSrb.Kafka.configuration;
 
 
 import com.codeWithSrb.Kafka.schema.VideoStatistics;
+import com.codeWithSrb.Kafka.schema.VideoStatisticsKey;
 import io.confluent.kafka.serializers.subject.TopicRecordNameStrategy;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
-import org.apache.avro.specific.SpecificRecord;
 import org.apache.kafka.common.serialization.Serde;
 
 import java.util.HashMap;
@@ -16,7 +16,7 @@ import static io.confluent.kafka.serializers.KafkaAvroDeserializerConfig.SPECIFI
 
 public class Serdes {
 
-    private final Serde<SpecificRecord> keySerde;
+    private final Serde<VideoStatisticsKey> keySerde;
     private final Serde<VideoStatistics> valueSerde;
 
     public Serdes(String schemaRegistryUrl) {
@@ -33,7 +33,7 @@ public class Serdes {
         valueSerde.configure(configs, false);
     }
 
-    public Serde<SpecificRecord> getKeySerde() {
+    public Serde<VideoStatisticsKey> getKeySerde() {
         return keySerde;
     }
 
